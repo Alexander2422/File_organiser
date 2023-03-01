@@ -17,8 +17,8 @@ def Directory(value):
 
 
 
-def organize():
-    for item in os.scandir():
+def organize(folder_path):
+    for item in os.scandir(folder_path):
         if item.is_dir():
             continue
         filePath=Path(item)
@@ -29,4 +29,4 @@ def organize():
             directoryPath.mkdir()
         filePath.rename(directoryPath.joinpath(filePath))
 
-organize()
+organize("give a path where you want the program to organize")
